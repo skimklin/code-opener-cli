@@ -1,6 +1,6 @@
 ### code-opener-cli
 
-Quickly open vscode's command line tools
+command line interface code opener
 
 #### install
 
