@@ -99,7 +99,7 @@ export const changeConfig = async (configKey: string, ...args: string[]) => {
             return;
           }
 
-          oldAlias[alternate] = operate;
+          oldAlias[operate] = alternate;
           break;
       }
       await writeConfig({ alias: oldAlias });

@@ -2,6 +2,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { SETTING_COMMANDS, changeConfig, readConfig, writeConfig } from './configFile';
 import { Log, formatObjectJson } from './utils';
+import { executeOpenCMD, searchFolder } from './folderSearch';
 
 // 扫描文件
 // import { glob, globSync, globStream, globStreamSync, Glob } from 'glob'
@@ -24,5 +25,7 @@ if (!command) {
     changeConfig(command, ...args)
   }
 
+  const folderName = command;
+  searchFolder(config, folderName);
 })();
 
