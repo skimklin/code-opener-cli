@@ -23,7 +23,7 @@ $ openc <yourProjectFolderName>
 #### tips
 ```bash
 # If your editor is not vscode, then you need to change the cmd command.Idea for example.$folder is a placeholder for the real path
-$ openc openCMD "idea $folder"
+$ openc openCMD 'idea $folder'
 ```
 
 #### config
@@ -36,7 +36,7 @@ $ openc <folderName>
 $ openc config
 
 # set open command, default is "code $folder", example for idea
-$ openc openCMD "idea $folder"
+$ openc openCMD 'idea $folder'
 
 # set folder alias
 $ openc alias <alias> <originFolderName>
