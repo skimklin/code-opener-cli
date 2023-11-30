@@ -25,6 +25,7 @@ Log.info(
   if (SETTING_COMMANDS.includes(command)) {
     Log.debug(command, ...args);
     changeConfig(command, ...args)
+    return;
   }
 
   const folderName = command;

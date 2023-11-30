@@ -1551,6 +1551,11 @@ system-architecture@^0.1.0:
   resolved "https://registry.npmmirror.com/system-architecture/-/system-architecture-0.1.0.tgz#71012b3ac141427d97c67c56bc7921af6bff122d"
   integrity sha512-ulAk51I9UVUyJgxlv9M6lFot2WP3e7t8Kz9+IS6D4rVba1tR9kON+Ey69f+1R4Q8cd45Lod6a4IcJIxnzGc/zA==
 
+systeminformation@^5.21.18:
+  version "5.21.18"
+  resolved "https://registry.npmmirror.com/systeminformation/-/systeminformation-5.21.18.tgz#70a66d4bcf2c7bbb5af67d92acdd50adb6626a67"
+  integrity sha512-PEoWd95nI5170rvIk4fagLH0SmzwfGt18w0+ex1Ljb2bSXvDs9PQdLNexMazL5L6Pzd6wxlpoWUAjX+hNRKN7g==
+
 tmp@^0.0.33:
   version "0.0.33"
   resolved "https://registry.npmmirror.com/tmp/-/tmp-0.0.33.tgz#6d34335889768d21b2bcda0aa277ced3b1bfadf9"

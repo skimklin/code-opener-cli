@@ -25,8 +25,8 @@ export interface OpenerConfig {
 const defaultConfig: OpenerConfig = {
   workspaces: [],
   alias: {},
-  ignoreFolders: ["node_modules",".git",".vscode",".DS_Store"],
-  workspaceOnly: false,
+  ignoreFolders: ["node_modules",".**"],
+  workspaceOnly: true,
 }
 
 const CONFIG_FILE_NAME = '.code-opener-config.json';

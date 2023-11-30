@@ -7,6 +7,7 @@ import os from 'os';
 import path from 'path';
 import _ from "lodash";
 import { select } from '@inquirer/prompts';
+import systemInfo from 'systeminformation';
 
 const CMD_HOLDER = '$folder';
 
@@ -45,8 +46,21 @@ export const searchFolder = async (config: OpenerConfig, folder: string) => {
 }
 
 export const searchGlobally = async (config: OpenerConfig, folderName: string) => {
-  const { workspaces, ignoreFolders } = config;
+  const { ignoreFolders } = config;
   Log.debug(folderName);
+  const rootDirs = await getRootDirs();
+  const results: string[] = [];
+  const folderMatcher = (folder: FolderItem) => {
+    if (minimatch(folder.currentFolder, folderName)) {
+      results.push(folder.fullPath);
+    }
+  }
+  await bfsTravelFolder(
+    rootDirs,
+    folderMatcher,
+    (folder) => ignoreFolders.some(e => minimatch(folder, e))
+  );
+  handleFindResult(folderName, config, results);
 }
 
 interface FolderItem {
@@ -76,11 +90,16 @@ export const bfsTravelFolder = async (
   callback: (folder: FolderItem) => void,
   shouldIgnore: (folder: string) => boolean) => {
   const folders = _.flattenDeep(await Promise.all(folderPathList.map(async folderPath => {
-    const underlayFolder = await fs.readdir(folderPath, { withFileTypes: true })
-    return underlayFolder.filter(e => e.isDirectory() && !shouldIgnore(e.name)).map(e => ({
-      fullPath: path.resolve(e.path, e.name),
-      currentFolder: e.name,
-    }))
+    try {
+      const underlayFolder = await fs.readdir(folderPath, { withFileTypes: true })
+      return underlayFolder.filter(e => e.isDirectory() && !shouldIgnore(e.name)).map(e => ({
+        fullPath: path.resolve(e.path, e.name),
+        currentFolder: e.name,
+      }))
+    } catch (error) {
+      Log.error(error)
+      return []
+    }
   })))
   folders.forEach(folder => {
     callback(folder);
@@ -91,5 +110,7 @@ export const bfsTravelFolder = async (
 }
 
 export const getRootDirs = async () => {
-
+  const isWin = os.platform() === 'win32';
+  const roots = isWin ? (await systemInfo.blockDevices()).slice(1).map(e => `${e.identifier}${path.sep}`) : ['/'];
+  return roots;
 }
