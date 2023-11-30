@@ -17,7 +17,7 @@ $ pnpm add -g code-opener-cli
 # first set your workspaces
 $ openc workspace add <pathToYourWorkspace>
 # open it
-$ openc 
+$ openc <yourProjectFolderName>
 ```
 
 #### tips
