@@ -20,7 +20,7 @@ export const executeOpenCMD = async (config: OpenerConfig, path: string) => {
 }
 
 export const handleFindResult = async (originSearchString: string, config: OpenerConfig, findFolders?: string[]) => {
-  if (!findFolders) {
+  if (!findFolders?.length) {
     Log.error(`${originSearchString} not found`);
     return;
   }

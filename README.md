@@ -11,7 +11,7 @@ $ npm i -g code-opener-cli
 #### config
 
 ```bash
-# open folder
+# open folder, Similarly **matching is possible for <folderName>, like **web**
 $ openc <folderName>
 
 # print config
