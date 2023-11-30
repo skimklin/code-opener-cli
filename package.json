@@ -1,7 +1,10 @@
 {
   "name": "code-opener-cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "command line interface code opener",
+  "keywords": [
+    "cli"
+  ],
   "main": "src/index.ts",
   "bin": {
     "openc": "bin/index.js"

@@ -2,8 +2,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { SETTING_COMMANDS, changeConfig, readConfig, writeConfig } from './configFile';
 import { Log, formatObjectJson } from './utils';
-import { executeOpenCMD, searchFolder } from './folderSearch';
-import path from 'path';
+import { searchFolder } from './folderSearch';
 
 const argv = <{ _: string[] }> yargs(hideBin(process.argv)).argv;
 
@@ -13,10 +12,6 @@ if (!command) {
   Log.error('required command')
   process.exit(1);
 }
-
-Log.info(
-  formatObjectJson(path.parse(process.cwd()))
-)
 
 ;(async () => {
   const config = await readConfig();

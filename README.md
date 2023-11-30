@@ -6,6 +6,24 @@ command line interface code opener
 
 ```bash
 $ npm i -g code-opener-cli
+or
+$ yarn global add code-opener-cli
+or
+$ pnpm add -g code-opener-cli
+```
+
+#### usage
+```bash
+# first set your workspaces
+$ openc workspace add <pathToYourWorkspace>
+# open it
+$ openc 
+```
+
+#### tips
+```bash
+# If your editor is not vscode, then you need to change the cmd command.Idea for example.$folder is a placeholder for the real path
+$ openc openCMD "idea $folder"
 ```
 
 #### config
@@ -18,7 +36,7 @@ $ openc <folderName>
 $ openc config
 
 # set open command, default is "code $folder", example for idea
-$ openc "idea $folder"
+$ openc openCMD "idea $folder"
 
 # set folder alias
 $ openc alias <alias> <originFolderName>
