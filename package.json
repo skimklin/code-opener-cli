@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development ts-node src/index",
     "dev:b": "yarn build && node bin/index",
+    "test": "echo test",
     "build": "rollup --c"
   },
   "author": "coffee",
