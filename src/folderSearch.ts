@@ -38,6 +38,7 @@ export const handleFindResult = async (originSearchString: string, config: Opene
 export const searchFolder = async (config: OpenerConfig, folder: string) => {
   const { workspaceOnly, alias } = config;
   const folderName = alias[folder] || folder;
+  Log.debug(folderName);
   if (workspaceOnly) {
     searchWorkspace(config, folderName);
   } else {

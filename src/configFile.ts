@@ -95,11 +95,11 @@ export const changeConfig = async (configKey: string, ...args: string[]) => {
           break;
         default:
           if (!alternate) {
-            Log.info(oldAlias[operate]);
-            return;
+            Log.info('remove alias:', oldAlias[operate]);
+            delete oldAlias[operate];
+          } else {
+            oldAlias[operate] = alternate;
           }
-
-          oldAlias[operate] = alternate;
           break;
       }
       await writeConfig({ alias: oldAlias });
