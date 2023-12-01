@@ -72274,10 +72274,10 @@ const executeOpenCMD = async (config, path) => {
     const { openCMD } = config;
     const command = openCMD ? openCMD.replaceAll(CMD_HOLDER, path) : `code ${path}`;
     Log.info(`executing command: ${command}`);
-    await execa(command);
+    await execa(command, { shell: true });
 };
 const handleFindResult = async (originSearchString, config, findFolders) => {
-    if (!findFolders) {
+    if (!findFolders?.length) {
         Log.error(`${originSearchString} not found`);
         return;
     }
@@ -72359,7 +72359,6 @@ if (!command) {
     Log.error('required command');
     process.exit(1);
 }
-Log.info(formatObjectJson(require$$1$1.parse(process.cwd())));
 (async () => {
     const config = await readConfig();
     Log.debug('config:', formatObjectJson(config));

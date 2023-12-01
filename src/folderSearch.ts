@@ -16,7 +16,7 @@ export const executeOpenCMD = async (config: OpenerConfig, path: string) => {
 
   const command = openCMD ? openCMD.replaceAll(CMD_HOLDER, path) : `code ${path}`;
   Log.info(`executing command: ${command}`);
-  await execa(command);
+  await execa(command, { shell: true });
 }
 
 export const handleFindResult = async (originSearchString: string, config: OpenerConfig, findFolders?: string[]) => {
