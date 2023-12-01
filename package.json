@@ -1,7 +1,13 @@
 {
   "name": "code-opener-cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "command line interface code opener",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skimklin/code-opener-cli"
+  },
+  "bugs": "https://github.com/skimklin/code-opener-cli/issues",
+  "homepage": "https://github.com/skimklin/code-opener-cli#readme",
   "keywords": [
     "cli"
   ],
