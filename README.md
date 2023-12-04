@@ -67,10 +67,10 @@ $ openc workspace clear
 $ openc workspaceOnly <true | false>
 
 # set ignoreFolders
-$ openc workspace add <ignoreFolder>
-$ openc workspace rm <ignoreFolder>
+$ openc ignoreFolders add <ignoreFolder>
+$ openc ignoreFolders rm <ignoreFolder>
 # list ignoreFolders
-$ openc workspace ls
+$ openc ignoreFolders ls
 # clear ignoreFolders
-$ openc workspace clear
+$ openc ignoreFolders clear
 ```
