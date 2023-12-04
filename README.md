@@ -22,14 +22,22 @@ $ openc <yourProjectFolderName>
 
 #### tips
 ```bash
-# If your editor is not vscode, then you need to change the cmd command.Idea for example.$folder is a placeholder for the real path
+# If your code editor is not vscode
+# then you need to change the executable command
+# $folder is a placeholder and will be replaced with the corresponding path when executed.
 $ openc openCMD 'idea $folder'
+
+# It's much easier to alias a project,
+# and then you can use the alias to open the project.
+# for example
+$ openc alias add my ~/workspace/my-project
+$ openc my
 ```
 
 #### config
 
 ```bash
-# open folder, Similarly **matching is possible for <folderName>, like **web**
+# open folder, Similarly ** matching is possible for <folderName>, like project**
 $ openc <folderName>
 
 # print config
