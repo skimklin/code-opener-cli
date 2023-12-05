@@ -22,6 +22,9 @@ $ openc <yourProjectFolderName>
 
 #### tips
 ```bash
+# show help command
+$ openc --help
+
 # If your code editor is not vscode
 # then you need to change the executable command
 # $folder is a placeholder and will be replaced with the corresponding path when executed.
