@@ -5,6 +5,8 @@ import { argv } from './cliDoc';
 
 const [command, ...args] = argv._;
 
+Log.debug(formatObjectJson(argv));
+
 ;(async () => {
   const config = await readConfig();
   Log.debug('config:', formatObjectJson(config));

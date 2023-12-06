@@ -58,6 +58,7 @@ export const resetConfig = async() => {
 }
 
 export const changeConfig = async (configKey: string, ...args: string[]) => {
+  Log.debug(configKey, formatObjectJson(args));
   const handlers: Record<string, (oldConfig: OpenerConfig) => Promise<void>> = {
     config: async (oldConfig: OpenerConfig) => {
       Log.info(formatObjectJson(oldConfig));
