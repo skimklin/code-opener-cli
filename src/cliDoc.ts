@@ -17,19 +17,19 @@ export const argv = <{ _: string[], [k: string]: unknown }> yargs(hideBin(proces
   )
 
   .command(
-    'workspaces add <pathToWorkspace>',
+    'workspace add <pathToWorkspace>',
     `Adding a list of folders to find for the \'openc\' command`
   )
   .command(
-    'workspaces rm <pathToWorkspace>',
+    'workspace rm <pathToWorkspace>',
     `Remove workspace from config`
   )
   .command(
-    'workspaces ls',
+    'workspace ls',
     `List config workspaces`
   )
   .command(
-    'workspaces clear',
+    'workspace clear',
     `Clear workspaces`
   )
 
